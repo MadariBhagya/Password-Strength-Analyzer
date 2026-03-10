@@ -18,9 +18,9 @@ def check_strength(password):
         score += 1
 
     if score <= 2:
-        return "Weak"
+        return "Weak  , your password should contain at least 8 characters, including uppercase letters, lowercase letters, numbers, and special characters."
     elif score <= 4:
-        return "Medium"
+        return "Medium , your password need special characters to be stronger."
     else:
         return "Strong"
 
