@@ -40,6 +40,15 @@ button{
     margin-top:15px;
     font-weight:bold;
 }
+
+.row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
 </style>
 
 </head>
@@ -50,10 +59,13 @@ button{
 
 <h2>Password Strength Analyzer</h2>
 
-<input type="password" id="password" placeholder="Enter Password">
+<div class="row">
+    <input type="password" id="password" placeholder="Enter Password">
 
-<br>
-
+    <label>
+        <input type="checkbox" onclick="togglePassword()">
+    </label>
+</div>
 <button onclick="checkPassword()">Check Strength</button>
 
 <p id="strength"></p>
@@ -61,6 +73,16 @@ button{
 </div>
 
 <script>
+
+function togglePassword() {
+    let x = document.getElementById("password");
+
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
 
 function checkPassword(){
 
